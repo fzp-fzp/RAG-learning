@@ -1,0 +1,40 @@
+[project]
+name = "rag-learning"
+version = "0.1.0"
+description = "A small local RAG learning project."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "chromadb==1.5.9",
+    "httpx>=0.27,<1",
+    "pymupdf>=1.24,<2",
+    "python-docx>=1.2.0",
+    "streamlit>=1.40,<2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.9",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[[tool.uv.index]]
+url = "https://mirrors.aliyun.com/pypi/simple/"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+"app/ui.py" = ["E402"]
+"scripts/check_env.py" = ["E402"]
+"scripts/ingest.py" = ["E402"]
+"scripts/query.py" = ["E402"]
+"scripts/evaluate_retrieval.py" = ["E402"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
