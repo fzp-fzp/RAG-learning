@@ -196,7 +196,7 @@ README.md                 # GitHub 项目入口
 LEARNING_NOTES.md         # RAG 学习笔记
 pyproject.toml
 uv.lock
-.env.example
+env.example
 .gitignore
 Modelfile.bge-m3-cpu
 
@@ -234,7 +234,7 @@ tests/
 
 ## 配置
 
-默认参数在 `app/config.py` 中，常用环境变量见 `.env.example`：
+默认参数在 `app/config.py` 中，常用环境变量见 `env.example`：
 
 - `OLLAMA_BASE_URL`
 - `LLM_MODEL`
@@ -244,7 +244,7 @@ tests/
 - `CHUNK_SIZE`
 - `CHUNK_OVERLAP`
 
-当前版本直接读取系统环境变量，`.env.example` 只是变量清单，不会自动加载 `.env`。在 PowerShell 中可以临时设置：
+当前版本直接读取系统环境变量，`env.example` 只是变量清单，不会自动加载 `.env`。在 PowerShell 中可以临时设置：
 
 ```powershell
 $env:CHROMA_PATH = "data/chroma"

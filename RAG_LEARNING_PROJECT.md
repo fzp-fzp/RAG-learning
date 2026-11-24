@@ -1,6 +1,6 @@
 # RAG 学习项目规划
 
-- 文档版本：v1.0.5
+- 文档版本：v1.0.6
 - 最后更新：2026-11-20
 - 当前阶段：V1 学习版本已完成（阶段 0–7 代码、自动化验收、GitHub 文档整理和项目目录改名）；Git 提交与推送待确认
 - 文档定位：本项目的单一事实来源。后续实现、验收和方案变更都以本文件为准。
@@ -228,7 +228,7 @@ V1 尚未引入 `doc_id`、`created_at` 和 `file_hash`。因此同名文件会�
 RAG_LEARNING_PROJECT.md
 pyproject.toml
 uv.lock
-.env.example
+env.example
 .gitignore
 Modelfile.bge-m3-cpu   # 从 bge-m3 派生 CPU-only Embedding 模型
 
@@ -278,7 +278,7 @@ tests/
 约定：
 
 - `data/`、`.venv/`、模型文件和 `.env` 不提交到 Git。
-- 不把 API Key、Token 或密码写进代码；即使本项目默认本地运行，也保留 `.env.example` 说明配置项。
+- 不把 API Key、Token 或密码写进代码；即使本项目默认本地运行，也保留 `env.example` 说明配置项。
 - 先命令行跑通，再接 Streamlit；这样出问题时能判断是 RAG 链路还是界面问题。
 
 ---
@@ -345,7 +345,7 @@ tests/
 交付物：
 
 - `pyproject.toml`、`uv.lock`、`.venv`。
-- `.env.example`、`.gitignore`、`app/config.py`。
+- `env.example`、`.gitignore`、`app/config.py`。
 - `scripts/check_env.py`。
 - 一段真实的模型调用记录。
 
@@ -832,6 +832,7 @@ tests/
 | 2026-11-20 | v1.0.3 | 计划将项目目录更名为 `RAG-learning`；同步更新文档中的绝对路径；实际目录改名需先关闭占用目录的 Codex 进程 |
 | 2026-11-20 | v1.0.4 | 确认目录改名完成：旧目录已不存在，项目根目录为 `RAG-learning`；项目内无旧路径引用；执行 `uv sync --reinstall` 修复虚拟环境启动器路径；在新目录下验证 82 个测试通过 |
 | 2026-11-24 | v1.0.5 | 公开推送前清理文档中的本机用户名和绝对路径，改为通用环境描述；技术内容不变 |
+| 2026-11-24 | v1.0.6 | 将配置模板 `.env.example` 更名为 `env.example`，避免推送门禁把示例文件误判为真实环境文件；同步更新 README 和项目结构说明 |
 
 ---
 
